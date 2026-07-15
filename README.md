@@ -25,3 +25,12 @@ LEFT, RIGHT, and FULL JOINS are also called OUTER
 JOIN.
 UNION clause will enable you to perform FULL
 JOIN.
+
+##
+Concatenation means combining two text strings
+together.
+CONCAT clause in SQL will help you combine two
+text strings.
+Knowing Excel will help in your understanding of
+SQL.
+CROSS
