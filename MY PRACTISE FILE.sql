@@ -25,6 +25,51 @@ SELECT * FROM movies WHERE industry = 'bollywood' ORDER BY imdb_rating DESC;
 SELECT * FROM movies WHERE industry = 'bollywood' ORDER BY imdb_rating DESC LIMIT 5;
 SELECT * FROM movies WHERE industry = 'hollywood' ORDER BY imdb_rating DESC LIMIT 5 OFFSET 1;
 
+SELECT MIN(imdb_rating) AS min_rating, 
+	ROUND(AVG(imdb_rating), 2) AS avg_rating, 
+	MAX(imdb_rating) AS max_rating 
+FROM movies WHERE studio = 'Marvel Studios';
+
+
+SELECT industry, COUNT(industry) AS count FROM movies
+GROUP BY industry
+ORDER BY count DESC;
+
+SELECT industry, COUNT(industry) AS count,
+ROUND(AVG(imdb_rating), 2) AS avg_rating
+FROM movies
+GROUP BY industry
+ORDER BY count DESC;
+
+SELECT studio, COUNT(studio) AS count,
+ROUND(AVG(imdb_rating), 1) AS avg_rating
+FROM movies
+GROUP BY studio
+ORDER BY avg_rating DESC;
+
+SELECT studio, COUNT(studio) AS count,
+ROUND(AVG(imdb_rating), 1) AS avg_rating
+FROM movies WHERE studio != ''
+GROUP BY studio
+ORDER BY avg_rating DESC;
+
+SELECT release_year, COUNT(*) as movies_cnt
+FROM movies 
+GROUP BY release_year
+ORDER BY movies_cnt DESC;
+
+
+SELECT release_year, COUNT(*) as movies_cnt
+FROM movies 
+GROUP BY release_year
+HAVING movies_cnt > 2 
+ORDER BY movies_cnt DESC;
+
+
+
+
+
+
 
 
 
